@@ -10,7 +10,6 @@ const genConfigs = (env, argv) => {
 
     const configs = merge(AllConfigs.common, AllConfigs[mode], { plugins: [new DefinePlugin(AllEnvs[ienv])] })
 
-    console.log(configs)
     return configs
 }
 
