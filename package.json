@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config ./webpack.config.js --env mode=production --env env=prd",
-    "build:dev": "webpack --config ./webpack.config.js --env mode=development --env env=prd"
+    "build": "tsc --noEmit && webpack --config ./webpack.config.js --env mode=production --env env=prd",
+    "build:dev": "webpack --config ./webpack.config.js --env mode=development --env env=prd",
+    "blist": "browserslist"
   },
   "keywords": [],
   "author": "",

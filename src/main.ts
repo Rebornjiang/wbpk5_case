@@ -6,9 +6,12 @@ interface Info {
 
 const obj: Info = {
   name: "reborn",
-  age: 18,
 };
 const wang = new Dog()
 class Person {}
+
+const arrRBJ = [1,2,3,4]
+
+arrRBJ.includes(3)
 
 console.log(obj.name);
