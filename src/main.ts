@@ -1,7 +1,8 @@
 import { Dog } from "./uitils";
+import './styles/index.scss'
 interface Info {
   name: string;
-  age: number;
+  age?: number;
 }
 
 const obj: Info = {

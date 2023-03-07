@@ -1,0 +1,7 @@
+$color: green;
+@import url('./other.scss');
+html,body {
+  background-color: $color;
+  height: 100%;
+  transform: scale(0);
+}

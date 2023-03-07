@@ -1,3 +1,5 @@
-module.exports = {
-    mode: 'development'
-}
+module.exports = ({ mode, argsv }) => {
+  return {
+    mode: "development",
+  };
+};
