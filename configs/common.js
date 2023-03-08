@@ -40,6 +40,19 @@ module.exports = ({ env, argv }) => {
           exclude: /node_modules/,
           loader: "babel-loader",
         },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset',
+          generator: {
+            filename: 'images/[hash][ext][query]'
+          },
+          parser: {
+            dataUrlCondition: {
+              maxSize: 4 * 1024 // 4kb
+            }
+          }
+
+        },
       ],
     },
 
