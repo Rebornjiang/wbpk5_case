@@ -16,10 +16,10 @@ module.exports = ({ env, argv }) => {
       clean: true,
     },
     resolve: {
-      extensions: [".ts", ".tsx", ".jsx", "..."],
+      extensions: [".ts", ".tsx", ".jsx", ".vue", "..."],
       alias: {
-        '@': resolvePath('./src')
-      }
+        "@": resolvePath("./src"),
+      },
     },
     module: {
       rules: [
@@ -67,6 +67,13 @@ module.exports = ({ env, argv }) => {
               maxSize: 4 * 1024, // 4kb
             },
           },
+        },
+        {
+          test: /\.(eot|ttf|woff|woff2)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: "font/[hash][ext][query]",
+          }
         },
       ],
     },
