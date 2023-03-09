@@ -3,5 +3,9 @@ $color: green;
 html,body {
   background-color: $color;
   height: 100%;
-  transform: scale(0);
 }
+
+.img {
+  background: url('@/assets/image/code.png');
+}
+

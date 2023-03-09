@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = ({ env, argv }) => {
-  
   const { mode } = env;
   const devMode = mode !== "production" ? true : false;
 
@@ -18,9 +17,26 @@ module.exports = ({ env, argv }) => {
     },
     resolve: {
       extensions: [".ts", ".tsx", ".jsx", "..."],
+      alias: {
+        '@': resolvePath('./src')
+      }
     },
     module: {
       rules: [
+        {
+          test: /\.css$/,
+          use: [
+            devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+            {
+              loader: "css-loader",
+              options: {
+                importLoaders: 1,
+              },
+            },
+            "postcss-loader",
+            "sass-loader",
+          ],
+        },
         {
           test: /\.s[ac]ss$/,
           use: [
@@ -41,17 +57,16 @@ module.exports = ({ env, argv }) => {
           loader: "babel-loader",
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset',
+          test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+          type: "asset",
           generator: {
-            filename: 'images/[hash][ext][query]'
+            filename: "images/[hash][ext][query]",
           },
           parser: {
             dataUrlCondition: {
-              maxSize: 4 * 1024 // 4kb
-            }
-          }
-
+              maxSize: 4 * 1024, // 4kb
+            },
+          },
         },
       ],
     },
