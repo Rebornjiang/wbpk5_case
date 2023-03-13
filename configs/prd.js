@@ -1,16 +1,16 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-module.exports = ({ env, argv }) => {
+module.exports = () => {
   return {
-    mode: "production",
+    mode: 'production',
     optimization: {
-      minimize: false,
+      minimize: false
     },
 
     plugins: [
       new MiniCssExtractPlugin({
-        filename: "[name][contenthash:6].css",
-      }),
-    ],
-  };
-};
+        filename: 'css/[name][contenthash:6].css'
+      })
+    ]
+  }
+}

@@ -1,9 +1,5 @@
-import("@/styles/font.scss");
+import { createApp } from 'vue'
+import App from './App.vue'
 
-const p = document.createElement("p");
-
-p.innerHTML = "hello wolrd 你好啊啊摇滚";
-p.style.fontFamily = "yaogun";
-
-
-document.body.appendChild(p)
+const app = createApp(App)
+app.mount('#app')

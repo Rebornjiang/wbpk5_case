@@ -4,7 +4,7 @@ const development = require('./dev')
 const production = require('./prd')
 
 module.exports = {
-    common,
-    development,
-    production
+  common,
+  development,
+  production
 }
