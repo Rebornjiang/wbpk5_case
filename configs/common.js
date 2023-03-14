@@ -86,7 +86,6 @@ module.exports = ({ env }) => {
         }
       ]
     },
-
     plugins: [
       new HtmlWebpackPlugin({
         title: devMode ? 'Development' : '系统名称',

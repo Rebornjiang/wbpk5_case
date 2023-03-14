@@ -8,9 +8,13 @@ const genConfigs = (env, argv) => {
   // mode: webpack 打包模式；ienv(inject env)： 需要往代码中注入什么环境的变量；
   const { mode, env: ienv } = env
 
-  const configs = merge(AllConfigs.common(context), AllConfigs[mode](context), {
-    plugins: [new DefinePlugin(AllEnvs[ienv])]
-  })
+  const configs = merge(
+    AllConfigs.common(context),
+    AllConfigs[mode ?? 'development'](context),
+    {
+      plugins: [new DefinePlugin(AllEnvs[ienv ?? 'dev'])]
+    }
+  )
   return configs
 }
 

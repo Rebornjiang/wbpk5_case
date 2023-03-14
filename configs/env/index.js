@@ -4,5 +4,8 @@ module.exports = {
   prd: {
     BASE_URL: 'https:tomswork.com'
   },
-  sit: {}
+  sit: {},
+  dev: {
+    BASE_URL: 'https:tomswork.com'
+  }
 }

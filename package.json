@@ -6,6 +6,7 @@
   "scripts": {
     "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve ",
     "build": "tsc --noEmit && webpack --config ./webpack.config.js --env mode=production --env env=prd",
     "build:dev": "webpack --config ./webpack.config.js --env mode=development --env env=prd",
     "blist": "browserslist",
@@ -53,7 +54,8 @@
   "dependencies": {
     "core-js": "^3.29.0",
     "regenerator-runtime": "^0.13.11",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "webpack-dev-server": "^4.11.1"
   },
   "lint-staged": {
     "*.{js,vue,ts,jsx,tsx}": [
