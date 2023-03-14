@@ -60,6 +60,7 @@
   "lint-staged": {
     "*.{js,vue,ts,jsx,tsx}": [
       "prettier --write",
+      "tsc --noEmit",
       "npm run lint"
     ]
   }
