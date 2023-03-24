@@ -16,7 +16,20 @@ console.log('hello script 111fds setup')
 </script>
 
 <style lang="scss" scoped>
+body {
+  background-color: lime;
+}
 .title {
   color: #000;
+  transform: translateX(0);
+}
+.sddd {
+  text-align: center;
+  color: lime;
+  font-size: 14px;
+}
+
+.aaaa {
+  box-sizing: border-box;
 }
 </style>

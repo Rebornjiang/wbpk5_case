@@ -1,6 +1,7 @@
 module.exports = () => {
   return {
     mode: 'development',
+    devtool: 'eval-cheap-module-source-map',
     devServer: {
       open: true,
       static: './dist',
@@ -14,6 +15,9 @@ module.exports = () => {
           changeOrigin: true
         }
       }
+    },
+    cache: {
+      type: 'filesystem'
     }
   }
 }
